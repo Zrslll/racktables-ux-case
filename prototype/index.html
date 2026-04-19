@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Objects · RackTables (improved prototype)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top bar — сохранили оригинальную тёмную полосу -->
+  <header class="appbar">
+    <span class="brand">MyCompanyName · RackTables 0.21.5</span>
+    <nav>
+      <a href="index.html" class="active">Objects</a>
+      <a href="#">IPv4 space</a>
+      <a href="#">Rackspace</a>
+    </nav>
+    <span class="spacer"></span>
+    <span class="user">RackTables Administrator <a href="#">[ logout ]</a></span>
+  </header>
+
+  <div class="crumbs">
+    <a href="#">Main page</a>
+    <span class="sep">›</span>
+    <strong>Objects</strong>
+    <span class="spacer"></span>
+    <input class="global-search" placeholder="Quick jump (⌘K)…" />
+  </div>
+
+  <main class="page">
+    <h1>Objects <span class="count" id="resultCount">(63)</span></h1>
+
+    <!-- Новая объединённая панель фильтров -->
+    <div class="filterbar">
+      <div class="search">
+        <span class="icon">⌕</span>
+        <input id="search" placeholder="Search by name, asset tag, label, IP, rack…" autofocus />
+      </div>
+      <div class="actions">
+        <button id="saveView">⭑ Save view</button>
+        <button class="primary">+ Add object</button>
+      </div>
+
+      <div class="filterbar-row2">
+        <span class="chip-group-label">Type</span>
+        <div class="chip" data-filter="type" data-value="Server">Server <span class="count" data-count-for="type:Server"></span></div>
+        <div class="chip" data-filter="type" data-value="Network switch">Switch <span class="count" data-count-for="type:Network switch"></span></div>
+        <div class="chip" data-filter="type" data-value="Router">Router <span class="count" data-count-for="type:Router"></span></div>
+        <div class="chip" data-filter="type" data-value="PDU">PDU <span class="count" data-count-for="type:PDU"></span></div>
+        <div class="chip" data-filter="type" data-value="PatchPanel">PatchPanel <span class="count" data-count-for="type:PatchPanel"></span></div>
+        <div class="chip" data-filter="type" data-value="DiskArray">DiskArray <span class="count" data-count-for="type:DiskArray"></span></div>
+        <div class="chip" data-filter="type" data-value="*">More…</div>
+
+        <div class="chip-divider"></div>
+        <span class="chip-group-label">Location</span>
+        <div class="chip" data-filter="row" data-value="1">Row 1 <span class="count" data-count-for="row:1"></span></div>
+        <div class="chip" data-filter="row" data-value="A">Row A <span class="count" data-count-for="row:A"></span></div>
+        <div class="chip" data-filter="row" data-value="NY100">CF-4 NY100 <span class="count" data-count-for="row:NY100"></span></div>
+        <div class="chip" data-filter="row" data-value="*">More…</div>
+
+        <div class="chip-divider"></div>
+        <span class="chip-group-label">Status</span>
+        <div class="chip" data-filter="status" data-value="problem">⚠ Has problems <span class="count" data-count-for="status:problem"></span></div>
+        <div class="chip" data-filter="status" data-value="warning">⚠ Warning <span class="count" data-count-for="status:warning"></span></div>
+
+        <div class="chip-divider"></div>
+        <span class="chip-group-label">Tag</span>
+        <div class="chip" data-filter="tag" data-value="production">production</div>
+        <div class="chip" data-filter="tag" data-value="testing">testing</div>
+        <div class="chip" data-filter="tag" data-value="load balancer">load balancer</div>
+        <div class="chip" data-filter="tag" data-value="medium network">medium network</div>
+      </div>
+    </div>
+
+    <p class="filter-summary" id="filterSummary"></p>
+
+    <div class="data-table-wrap" id="tableWrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="name">Common name <span class="sort-arrow">↕</span></th>
+            <th class="sortable" data-sort="type">Type <span class="sort-arrow">↕</span></th>
+            <th class="sortable" data-sort="label">Visible label <span class="sort-arrow">↕</span></th>
+            <th class="sortable" data-sort="tag">Asset tag <span class="sort-arrow">↕</span></th>
+            <th class="sortable" data-sort="location">Row / Rack <span class="sort-arrow">↕</span></th>
+            <th>Status</th>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div class="table-footer">
+        <span id="footerSummary">Showing 0 of 0</span>
+        <div class="density-toggle">
+          <button data-density="comfortable" class="active">Comfortable</button>
+          <button data-density="dense">Dense</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>London server 4 · Objects · RackTables (improved prototype)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="appbar">
+    <span class="brand">MyCompanyName · RackTables 0.21.5</span>
+    <nav>
+      <a href="index.html" class="active">Objects</a>
+      <a href="#">IPv4 space</a>
+      <a href="#">Rackspace</a>
+    </nav>
+    <span class="spacer"></span>
+    <span class="user">RackTables Administrator <a href="#">[ logout ]</a></span>
+  </header>
+
+  <div class="crumbs">
+    <a href="index.html">Main page</a>
+    <span class="sep">›</span>
+    <a href="index.html">Objects</a>
+    <span class="sep">›</span>
+    <a href="#">London</a>
+    <span class="sep">›</span>
+    <a href="#">Row 1</a>
+    <span class="sep">›</span>
+    <a href="#">Rack L01</a>
+    <span class="sep">›</span>
+    <strong>London server 4</strong>
+    <span class="spacer"></span>
+    <input class="global-search" placeholder="Quick jump (⌘K)…" />
+  </div>
+
+  <main class="page">
+
+    <!-- HEADER: title + meta + alert + actions (всё на одном экране) -->
+    <section class="detail-header">
+      <div class="top">
+        <div class="info">
+          <h1>
+            London server 4
+            <span class="status-badge problem"><span class="dot"></span>Problem</span>
+          </h1>
+          <div class="meta">
+            <span><b>Type:</b> Server</span>
+            <span><b>Visible label:</b> lserver04</span>
+            <span><b>Asset tag:</b> srv503</span>
+            <span><b>HW:</b> Sun Fire V210</span>
+            <span><b>SW:</b> Solaris 10</span>
+            <span><b>Location:</b> <a href="#">Row 1 / Rack L01 / U8 (8U)</a></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn">⎘ Clone</button>
+          <button class="btn">📜 Log (12)</button>
+          <button class="btn">📁 Files (0)</button>
+          <button class="btn primary">✎ Edit properties</button>
+        </div>
+      </div>
+
+      <div class="alert problem">
+        <span style="font-size:18px">⚠</span>
+        <div class="text">
+          <strong>Has problems:</strong> HW: Sun Fire V210 — disk reporting SMART errors, replacement required.
+          <span style="color:var(--text-muted)">Flagged Apr&nbsp;14, operator admin.</span>
+        </div>
+        <div class="actions">
+          <button class="btn">Create ticket</button>
+          <button class="btn danger-ghost">Clear flag</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="detail-grid">
+
+      <!-- LEFT COLUMN: scrollable sections -->
+      <div>
+
+        <!-- SUMMARY (с inline-edit) -->
+        <section class="section" id="sec-summary">
+          <header>
+            <h2>Summary</h2>
+            <span class="chev">▾</span>
+          </header>
+          <div class="body">
+            <div class="field">
+              <div class="label">Common name</div>
+              <div class="value">
+                <span class="v" data-edit="name" data-type="text">London server 4</span>
+                <span class="pencil">✎</span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="label">Object type</div>
+              <div class="value">
+                <span class="v" data-edit="type" data-type="select" data-options="Server,Network switch,Router,PDU,PatchPanel,DiskArray,KVM switch,Modem">Server</span>
+                <span class="pencil">✎</span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="label">Visible label</div>
+              <div class="value"><span class="v" data-edit="label" data-type="text">lserver04</span><span class="pencil">✎</span></div>
+            </div>
+            <div class="field">
+              <div class="label">Asset tag</div>
+              <div class="value"><span class="v" data-edit="tag" data-type="text">srv503</span><span class="pencil">✎</span></div>
+            </div>
+            <div class="field">
+              <div class="label">HW type</div>
+              <div class="value"><span class="v" data-edit="hw" data-type="text">Sun Fire V210</span><span class="pencil">✎</span></div>
+            </div>
+            <div class="field">
+              <div class="label">SW type</div>
+              <div class="value"><span class="v" data-edit="sw" data-type="text">Solaris 10</span><span class="pencil">✎</span></div>
+            </div>
+            <div class="field">
+              <div class="label">Tags</div>
+              <div class="value">
+                <span class="tag">production</span>
+                <span class="tag">medium network</span>
+                <span class="v empty" data-edit="addtag" data-type="text" style="margin-left:6px">+ tag</span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="label">Comment</div>
+              <div class="value"><span class="v" data-edit="comment" data-type="text" style="white-space:pre-wrap">this one needs replacement</span><span class="pencil">✎</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PORTS (inline + add row) -->
+        <section class="section" id="sec-ports">
+          <header>
+            <h2>Ports &amp; links</h2>
+            <span class="badge">2</span>
+            <span class="chev">▾</span>
+          </header>
+          <div class="body no-pad">
+            <table class="subtable">
+              <thead>
+                <tr>
+                  <th>Local</th>
+                  <th>Visible label</th>
+                  <th>Interface</th>
+                  <th>L2 address</th>
+                  <th>Remote object · port</th>
+                  <th>Cable ID</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>eth0</b></td>
+                  <td><span class="v" data-edit="port-label-1" data-type="text">1</span></td>
+                  <td>1000Base-T</td>
+                  <td><span class="v empty" data-edit="port-mac-1" data-type="text">—</span></td>
+                  <td><a href="#">london LB</a> · e4 <span style="color:var(--text-faint)">(linked)</span></td>
+                  <td><span class="v empty" data-edit="port-cable-1" data-type="text">—</span></td>
+                  <td>
+                    <span class="row-actions">
+                      <button class="icon-btn" title="Change link">⇆</button>
+                      <button class="icon-btn" title="Delete">🗑</button>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>eth1</b></td>
+                  <td><span class="v" data-edit="port-label-2" data-type="text">2</span></td>
+                  <td>1000Base-T</td>
+                  <td><span class="v empty" data-edit="port-mac-2" data-type="text">—</span></td>
+                  <td><span style="color:var(--text-faint)">not connected</span> <a href="#" style="margin-left:6px">+ link</a></td>
+                  <td><span class="v empty" data-edit="port-cable-2" data-type="text">—</span></td>
+                  <td>
+                    <span class="row-actions">
+                      <button class="icon-btn" title="Change link">⇆</button>
+                      <button class="icon-btn" title="Delete">🗑</button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="add-row">
+              <button class="ghost-btn" id="addPort">+ Add port</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- IP ADDRESSES -->
+        <section class="section" id="sec-ips">
+          <header>
+            <h2>IP addresses</h2>
+            <span class="badge">2</span>
+            <span class="chev">▾</span>
+          </header>
+          <div class="body no-pad">
+            <div class="ip-row scope-error">
+              <div>
+                <div><b>10.200.1.60</b> <span style="color:var(--status-error);font-weight:600">L</span></div>
+                <div style="color:var(--text-muted);font-size:11px">no interface</div>
+              </div>
+              <div class="net">
+                <div class="name"><a href="#">10.200.1.0/26</a> <span style="color:var(--text-faint)">·64</span></div>
+                <div class="meta">London network devices and VLANs · medium</div>
+              </div>
+              <div class="peers">
+                <span style="color:var(--text-muted)">routed by:</span> <a href="#">london router</a>
+              </div>
+              <div class="peers">
+                <span style="color:var(--text-muted)">peers:</span>
+                <a href="#">london LB</a><a href="#">London server 5</a>
+              </div>
+            </div>
+
+            <div class="ip-row scope-medium">
+              <div>
+                <div><b>10.200.1.68</b></div>
+                <div style="color:var(--text-muted);font-size:11px">eth0</div>
+              </div>
+              <div class="net">
+                <div class="name"><a href="#">10.200.1.64/26</a> <span style="color:var(--text-faint)">·64</span></div>
+                <div class="meta">London HA server farm · medium</div>
+              </div>
+              <div class="peers"><span style="color:var(--text-muted)">routed by:</span> —</div>
+              <div class="peers"><span style="color:var(--text-muted)">peers:</span> —</div>
+            </div>
+
+            <div class="add-row">
+              <button class="ghost-btn">+ Add IP</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- NAT (свёрнут по умолчанию — он редко нужен) -->
+        <section class="section collapsed" id="sec-nat">
+          <header>
+            <h2>NATv4</h2>
+            <span class="badge">1</span>
+            <span class="chev">▾</span>
+          </header>
+          <div class="body no-pad">
+            <table class="subtable">
+              <thead>
+                <tr>
+                  <th>Matched endpoint</th>
+                  <th>Source object</th>
+                  <th>Translated to</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>UDP/<a href="#">10.200.1.60</a>:53</td>
+                  <td><a href="#">london LB</a></td>
+                  <td>10.200.1.68:53</td>
+                  <td><span class="v empty" data-edit="nat-c-1" data-type="text">— add comment —</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 802.1Q / VLAN — свёрнут -->
+        <section class="section collapsed">
+          <header>
+            <h2>802.1Q VLAN order</h2>
+            <span class="badge">0</span>
+            <span class="chev">▾</span>
+          </header>
+          <div class="body" style="color:var(--text-muted)">No VLAN configuration.</div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN: rack + connections -->
+      <aside>
+        <div class="rack-panel">
+          <header>
+            Rackspace
+            <span class="loc"><a href="#">Row 1 · L01 →</a></span>
+          </header>
+          <div class="body">
+            <div class="rack-grid" id="rackGrid"></div>
+          </div>
+          <div class="rack-legend">
+            <span><span class="swatch" style="background:#d4ebe1"></span>Occupied</span>
+            <span><span class="swatch" style="background:#ecf6f1"></span>Free</span>
+            <span><span class="swatch" style="background:var(--status-self-bg);outline:1px solid var(--status-error)"></span>This object</span>
+          </div>
+        </div>
+
+        <div class="connections">
+          <header>Connections</header>
+          <ul>
+            <li><span class="role">link</span> <a href="#">london LB</a> · e4</li>
+            <li><span class="role">net</span> <a href="#">London network devices and VLANs</a></li>
+            <li><span class="role">net</span> <a href="#">London HA server farm</a></li>
+            <li><span class="role">routed-by</span> <a href="#">london router</a></li>
+            <li><span class="role">peer</span> <a href="#">London server 5</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <div class="toast" id="toast">Saved</div>
+
+  <script src="data.js"></script>
+  <script>
+  (function () {
+    const $ = (s, r) => (r || document).querySelector(s);
+    const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+
+    function showToast(msg) {
+      const t = $('#toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => t.classList.remove('show'), 1200);
+    }
+
+    // --- collapsible sections ---
+    $$('.section > header').forEach(h => {
+      h.addEventListener('click', () => h.parentElement.classList.toggle('collapsed'));
+    });
+
+    // --- inline edit ---
+    document.body.addEventListener('click', e => {
+      const v = e.target.closest('.v[data-edit]');
+      if (!v || v.classList.contains('editing')) return;
+      e.stopPropagation();
+      startEdit(v);
+    });
+
+    function startEdit(el) {
+      const type = el.dataset.type || 'text';
+      const original = el.classList.contains('empty') ? '' : el.textContent.trim();
+      el.classList.add('editing');
+      el.style.display = 'none';
+
+      const editor = document.createElement('span');
+      editor.className = 'inline-editor';
+
+      let input;
+      if (type === 'select') {
+        input = document.createElement('select');
+        (el.dataset.options || '').split(',').forEach(opt => {
+          const o = document.createElement('option');
+          o.value = opt; o.textContent = opt;
+          if (opt === original) o.selected = true;
+          input.appendChild(o);
+        });
+      } else {
+        input = document.createElement('input');
+        input.type = 'text';
+        input.value = original;
+        input.placeholder = 'Enter value';
+      }
+      editor.appendChild(input);
+
+      const save = document.createElement('span');
+      save.className = 'save'; save.textContent = '✓ Save';
+      const cancel = document.createElement('span');
+      cancel.className = 'cancel'; cancel.textContent = '✕';
+      editor.appendChild(save);
+      editor.appendChild(cancel);
+
+      el.parentElement.appendChild(editor);
+      input.focus();
+      if (input.select) input.select();
+
+      function commit() {
+        const val = input.value.trim();
+        el.textContent = val || '—';
+        el.classList.toggle('empty', !val);
+        cleanup();
+        showToast('Saved: ' + (el.dataset.edit || 'field'));
+      }
+      function abort() {
+        el.textContent = original || '—';
+        el.classList.toggle('empty', !original);
+        cleanup();
+      }
+      function cleanup() {
+        el.style.display = '';
+        el.classList.remove('editing');
+        editor.remove();
+      }
+
+      save.addEventListener('click', commit);
+      cancel.addEventListener('click', abort);
+      input.addEventListener('keydown', ev => {
+        if (ev.key === 'Enter') commit();
+        if (ev.key === 'Escape') abort();
+      });
+      input.addEventListener('blur', () => setTimeout(() => {
+        if (document.body.contains(editor)) commit();
+      }, 150));
+    }
+
+    $('#addPort') && $('#addPort').addEventListener('click', () => showToast('Inline add port form (mockup)'));
+
+    // --- render rackspace from data ---
+    const rack = $('#rackGrid');
+    if (rack) {
+      const occupied = (window.OBJECT_DETAIL && window.OBJECT_DETAIL.rackspace) || [];
+      const map = {};
+      occupied.forEach(u => { map[u.unit] = u; });
+      const html = [];
+      for (let i = 42; i >= 1; i--) {
+        const u = map[i];
+        const cls = u ? ('u-cell ' + (u.kind === 'self' ? 'self' : u.kind === 'shelf' ? 'shelf' : '')) : 'u-cell empty';
+        const label = u ? u.label : '';
+        html.push('<div class="u-num">' + i + '</div>');
+        html.push('<div class="' + cls + '" title="U' + i + (label ? ' · ' + label : '') + '">' + label + '</div>');
+      }
+      rack.innerHTML = html.join('');
+    }
+  })();
+  </script>
+</body>
+</html>

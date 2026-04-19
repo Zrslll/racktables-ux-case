@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>BEFORE · Objects list · RackTables</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="annot-page">
+    <a class="nav-back" href="../index.html">← к улучшенному прототипу</a>
+    <h1>«До»: список Objects (63)</h1>
+    <p class="lede">
+      Текущий вид раздела Objects на demo.racktables.org. Числа на карточке —
+      ключевые проблемы, мешающие быстро выполнять основные задачи (поиск, фильтрация,
+      понимание статуса, переход к действию).
+    </p>
+
+    <div class="annot-stage" style="width: 1024px; max-width:100%;">
+      <img src="before-list.jpg" alt="Objects list — current state" />
+
+      <!-- markers сверху скриншота. Координаты подобраны под исходное 1024px-изображение. -->
+      <div class="annot-marker" style="left:760px; top:30px; width:240px; height:30px;"></div>
+      <div class="annot-pin"    style="left:1000px; top:24px;">1</div>
+
+      <div class="annot-marker" style="left:760px; top:115px; width:200px; height:175px;"></div>
+      <div class="annot-pin"    style="left:960px;  top:108px;">2</div>
+
+      <div class="annot-marker" style="left:130px; top:170px; width:625px; height:30px;"></div>
+      <div class="annot-pin"    style="left:120px;  top:160px;">3</div>
+
+      <div class="annot-marker" style="left:130px; top:530px; width:625px; height:25px;"></div>
+      <div class="annot-pin"    style="left:120px;  top:520px;">4</div>
+
+      <div class="annot-marker" style="left:0; top:80px; width:25px; height:10px;"></div>
+      <div class="annot-pin"    style="left:30px;  top:74px;">5</div>
+    </div>
+
+    <div class="annot-legend">
+      <ol>
+        <li><b>1. Поиск спрятан в шапке</b> и не фильтрует таблицу инкрементально — пользователю проще нажать Ctrl+F в браузере. Поиск по asset tag/IP не очевиден.</li>
+        <li><b>2. Единственный фильтр — по тегам.</b> Нет фильтров по типу (Server/Switch/PDU…), площадке (Row/Rack), статусу (Has problems). Пользователь скроллит 63+ строки руками.</li>
+        <li><b>3. Колонки заголовков не сортируются</b> и не имеют визуальных индикаторов сортировки. Невозможно быстро упорядочить, например, по asset tag или по стойке.</li>
+        <li><b>4. «Has problems» = только подсветка строки</b> — без иконки, легенды и без причины. На втором экране пользователь не помнит, что значит красный фон.</li>
+        <li><b>5. Хлебные крошки минимальны</b> и не дают переход «назад в стойку» одним кликом. Нет breadcrumbs к связанным сущностям.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

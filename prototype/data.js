@@ -1,0 +1,73 @@
+// Mock data based on demo.racktables.org (Objects, 63 items)
+// Trimmed to a representative sample of ~30 objects covering all types.
+
+window.OBJECTS = [
+  { id: 1, name: '[PatchPanel]', type: 'PatchPanel', label: '', tag: '', location: 'CF-4/NY100', row: 'NY100', rack: 'CF-4', tags: ['production'], status: 'ok' },
+  { id: 2, name: '[PatchPanel]', type: 'PatchPanel', label: '', tag: '', location: 'Row A/T01', row: 'A', rack: 'T01', tags: [], status: 'ok' },
+  { id: 3, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'Row 1/L03', row: '1', rack: 'L03', tags: ['production'], status: 'ok' },
+  { id: 4, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'CF-4/NY100', row: 'NY100', rack: 'CF-4', tags: ['production'], status: 'ok' },
+  { id: 5, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'Row 1/L01', row: '1', rack: 'L01', tags: ['production'], status: 'ok' },
+  { id: 6, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'Row 1/L03', row: '1', rack: 'L03', tags: ['production'], status: 'ok' },
+  { id: 7, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'CF-4/NY101', row: 'NY101', rack: 'CF-4', tags: ['production'], status: 'ok' },
+  { id: 8, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'Row 1/L02', row: '1', rack: 'L02', tags: ['production'], status: 'ok' },
+  { id: 9, name: '[PDU]', type: 'PDU', label: '', tag: '', location: 'Row 1/M01', row: '1', rack: 'M01', tags: ['production'], status: 'ok' },
+  { id: 10, name: '[Shelf]', type: 'Shelf', label: '', tag: '', location: 'Row 1/L01', row: '1', rack: 'L01', tags: [], status: 'ok' },
+  { id: 11, name: 'backup library', type: 'TapeLibrary', label: 'lbackup', tag: 'misc200', location: 'Row 1/L03', row: '1', rack: 'L03', tags: [], status: 'ok' },
+  { id: 12, name: 'london LB', type: 'Network switch', label: 'llb', tag: 'net1000', location: 'Row 1/L02', row: '1', rack: 'L02', tags: ['load balancer', 'medium network'], status: 'ok' },
+  { id: 13, name: 'London modem 1', type: 'Modem', label: '', tag: '', location: '[Shelf]', row: '', rack: '[Shelf]', tags: [], status: 'ok' },
+  { id: 14, name: 'london router', type: 'Router', label: 'bbrtr1', tag: 'net247', location: 'Row 1/L02', row: '1', rack: 'L02', tags: ['testing'], status: 'ok' },
+  { id: 15, name: 'London server 1', type: 'Server', label: 'lserver01', tag: 'srv500', location: 'Row 1/L01', row: '1', rack: 'L01', tags: ['production'], status: 'ok' },
+  { id: 16, name: 'London server 2', type: 'Server', label: 'lserver02', tag: 'srv501', location: 'Row 1/L01', row: '1', rack: 'L01', tags: ['production'], status: 'ok' },
+  { id: 17, name: 'London server 3', type: 'Server', label: 'lserver03', tag: 'srv502', location: 'Row 1/L01', row: '1', rack: 'L01', tags: ['production'], status: 'ok' },
+  { id: 18, name: 'London server 4', type: 'Server', label: 'lserver04', tag: 'srv503', location: 'Row 1/L01', row: '1', rack: 'L01', tags: ['production', 'medium network'], status: 'problem', problemReason: 'HW: Sun Fire V210 — disk reporting SMART errors, replacement required' },
+  { id: 19, name: 'London server 5', type: 'Server', label: 'lserver05', tag: 'srv504', location: 'Row 1/L01', row: '1', rack: 'L01', tags: ['production'], status: 'ok' },
+  { id: 20, name: 'London server 6', type: 'Server', label: 'lserver06', tag: 'srv505', location: 'Row 1/L03', row: '1', rack: 'L03', tags: ['production'], status: 'ok' },
+  { id: 21, name: 'London server 7', type: 'Server', label: 'lserver07', tag: 'srv506', location: 'Row 1/L03', row: '1', rack: 'L03', tags: ['production'], status: 'ok' },
+  { id: 22, name: 'london-NAS', type: 'Router', label: '', tag: 'net1001', location: 'Row 1/L02', row: '1', rack: 'L02', tags: [], status: 'ok' },
+  { id: 23, name: 'londonswitch1', type: 'Network switch', label: '', tag: '', location: 'Row 1/L02', row: '1', rack: 'L02', tags: [], status: 'ok' },
+  { id: 24, name: 'lserver06 array', type: 'DiskArray', label: 'lserver06 array', tag: '', location: 'Row 1/L03', row: '1', rack: 'L03', tags: [], status: 'ok' },
+  { id: 25, name: 'lserver07 array', type: 'DiskArray', label: 'lserver07 array', tag: '', location: 'Row 1/L03', row: '1', rack: 'L03', tags: [], status: 'ok' },
+  { id: 26, name: 'moscow kvm switch', type: 'KVM switch', label: '', tag: 'sw0002', location: 'Row 1/M01', row: '1', rack: 'M01', tags: ['production'], status: 'ok' },
+  { id: 27, name: 'moscow router', type: 'Router', label: 'bbrtr3', tag: '', location: 'Row 1/M01', row: '1', rack: 'M01', tags: ['production'], status: 'ok' },
+  { id: 28, name: 'mps1', type: 'Server', label: '', tag: '', location: 'Row 1/M01', row: '1', rack: 'M01', tags: ['production'], status: 'ok' },
+  { id: 29, name: 'mps2', type: 'Server', label: '', tag: '', location: 'Row 1/M01', row: '1', rack: 'M01', tags: ['production'], status: 'ok' },
+  { id: 30, name: 'NY-edge-1', type: 'Router', label: 'nyrtr1', tag: 'net800', location: 'CF-4/NY100', row: 'NY100', rack: 'CF-4', tags: ['production'], status: 'warning', problemReason: 'CPU usage > 85% for the last 2 hours' },
+];
+
+// Detailed data for one object (London server 4)
+window.OBJECT_DETAIL = {
+  id: 18,
+  name: 'London server 4',
+  type: 'Server',
+  label: 'lserver04',
+  tag: 'srv503',
+  hwType: 'Sun Fire V210',
+  swType: 'Solaris 10',
+  status: 'problem',
+  problemReason: 'HW: Sun Fire V210 — disk reporting SMART errors, replacement required',
+  comment: 'this one needs replacement',
+  location: { row: '1', rack: 'L01', units: '8U' },
+  ports: [
+    { local: 'eth0', label: '1', iface: '1000Base-T', mac: '', remote: 'london LB', remotePort: 'e4', cableId: '' },
+    { local: 'eth1', label: '2', iface: '1000Base-T', mac: '', remote: '', remotePort: '', cableId: '' },
+  ],
+  ips: [
+    { iface: '', ip: '10.200.1.60', kind: 'L', network: '10.200.1.0/26', networkName: 'London network devices and VLANs', netSize: 64, peers: ['london LB', 'London server 5'], routedBy: ['london router'], scope: 'medium' },
+    { iface: 'eth0', ip: '10.200.1.68', kind: '', network: '10.200.1.64/26', networkName: 'London HA server farm', netSize: 64, peers: [], routedBy: [], scope: 'medium' },
+  ],
+  nat: [
+    { matchedEndpoint: 'UDP/10.200.1.60:53', sourceObject: 'london LB', translatedTo: '10.200.1.68:53', ruleComment: '' },
+  ],
+  rackspace: [
+    { unit: 35, label: 'sw-d1', kind: 'busy' },
+    { unit: 23, label: 'shared storage', kind: 'busy' },
+    { unit: 17, label: '[Shelf]', kind: 'shelf' },
+    { unit: 10, label: 'London server 5', kind: 'busy' },
+    { unit: 8, label: 'London server 4', kind: 'self' },
+    { unit: 7, label: 'London server 3', kind: 'busy' },
+    { unit: 5, label: 'London server 2', kind: 'busy' },
+    { unit: 3, label: 'London server 1', kind: 'busy' },
+    { unit: 1, label: '[PDU]', kind: 'busy' },
+  ],
+  tags: ['production', 'medium network'],
+};

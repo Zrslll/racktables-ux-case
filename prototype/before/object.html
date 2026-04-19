@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>BEFORE · Object detail · RackTables</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="annot-page">
+    <a class="nav-back" href="../object.html?id=18">← к улучшенному прототипу</a>
+    <h1>«До»: карточка London server 4</h1>
+    <p class="lede">
+      Текущая страница объекта в RackTables. Все важные действия (правка, добавление порта,
+      привязка IP) спрятаны под отдельные вкладки и формы — это превращает рутину
+      в 4–5 переходов.
+    </p>
+
+    <div class="annot-stage" style="width: 1024px; max-width:100%;">
+      <img src="before-object.jpg" alt="Object detail — current state" />
+
+      <div class="annot-marker" style="left:0; top:80px; width:430px; height:25px;"></div>
+      <div class="annot-pin"    style="left:435px; top:74px;">1</div>
+
+      <div class="annot-marker" style="left:155px; top:215px; width:580px; height:30px;"></div>
+      <div class="annot-pin"    style="left:140px; top:208px;">2</div>
+
+      <div class="annot-marker" style="left:155px; top:370px; width:580px; height:80px;"></div>
+      <div class="annot-pin"    style="left:140px; top:380px;">3</div>
+
+      <div class="annot-marker" style="left:155px; top:490px; width:580px; height:130px;"></div>
+      <div class="annot-pin"    style="left:140px; top:540px;">4</div>
+
+      <div class="annot-marker" style="left:840px; top:140px; width:160px; height:540px;"></div>
+      <div class="annot-pin"    style="left:1010px; top:130px;">5</div>
+    </div>
+
+    <div class="annot-legend">
+      <ol>
+        <li><b>1. 9 вкладок без иерархии важности.</b> View / Properties / Log / Rackspace / Ports / IP / NATv4 / Tags / Files / 802.1Q — пользователю надо заранее знать, где живёт нужное поле.</li>
+        <li><b>2. Баннер «Has problems» — без причины и без CTA.</b> Это критично: пользователь видит проблему, но не понимает, что с ней делать.</li>
+        <li><b>3. Ports &amp; links — read-only на странице View.</b> Чтобы поменять label порта или добавить cable ID, надо идти на отдельную вкладку Ports → форму → Save → возврат (4–5 кликов на тривиальную правку).</li>
+        <li><b>4. IP addresses показывают связи, но без действий.</b> Привязать новый IP / поменять интерфейс — снова через отдельную вкладку.</li>
+        <li><b>5. Rackspace allocation полезен, но «оторван».</b> Из стойки нельзя одним кликом перейти в карточку соседа или его порт. Соседние строки не кликабельны.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
